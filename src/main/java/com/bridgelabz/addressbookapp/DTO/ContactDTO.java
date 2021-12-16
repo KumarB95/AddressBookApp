@@ -1,9 +1,7 @@
-package com.bridgelabz.addressbookapp.model;
+package com.bridgelabz.addressbookapp.DTO;
 
-import com.bridgelabz.addressbookapp.DTO.ContactDTO;
+public class ContactDTO {
 
-public class Contact {
-    private int contactId;
     public String firstName;
     public String lastName;
     public String address;
@@ -12,23 +10,16 @@ public class Contact {
     public String zip;
     public String phone;
 
-    public Contact(int contactId, ContactDTO contactDTO) {
-        this.contactId = contactId;
-        this.firstName = contactDTO.firstName;
-        this.lastName = contactDTO.lastName;
-        this.address = contactDTO.address;
-        this.state = contactDTO.state;
-        this.city = contactDTO.city;
-        this.zip = contactDTO.zip;
-        this.phone = contactDTO.phone;
-    }
+    public ContactDTO(String firstName, String lastName, String address, String state, String city, String zip,
+                      String phone) {
 
-    public int getContactId() {
-        return contactId;
-    }
-
-    public void setContactId(int contactId) {
-        this.contactId = contactId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.state = state;
+        this.city = city;
+        this.zip = zip;
+        this.phone = phone;
     }
 
     public String getFirstName() {
@@ -86,4 +77,5 @@ public class Contact {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }
