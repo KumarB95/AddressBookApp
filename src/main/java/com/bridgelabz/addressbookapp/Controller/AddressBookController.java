@@ -19,7 +19,8 @@ public class AddressBookController {
 
     @RequestMapping(value = { "", "/", "/get" })
     public ResponseEntity<ResponseDTO> getContactData() {
-        List<Contact> contactList = addressbookservice.getContact();
+        List<Contact> contactList = null;
+        contactList=addressbookservice.getContact();
         ResponseDTO response = new ResponseDTO("Get call success", contactList);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
     }
@@ -43,7 +44,8 @@ public class AddressBookController {
     @PutMapping("/update/{contactId}")
     public ResponseEntity<ResponseDTO> updateContactData(@PathVariable("contactId") int contactId,
                                                          @RequestBody ContactDTO contactDTO) {
-        Contact contact = addressbookservice.updateContact(contactId, contactDTO);
+        Contact contact = null;
+        contact=addressbookservice.updateContact(contactId, contactDTO);
         ResponseDTO response = new ResponseDTO("Updated contact data for", contact);
         return new ResponseEntity<ResponseDTO>(response, HttpStatus.OK);
 

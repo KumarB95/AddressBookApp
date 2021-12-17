@@ -1,26 +1,50 @@
 package com.bridgelabz.addressbookapp.model;
 
 import com.bridgelabz.addressbookapp.DTO.ContactDTO;
+import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "addressbook")
 public class Contact {
+    @Id
+    @Column(name="contactId")
     private int contactId;
+    @Column(name="firstName")
     public String firstName;
+    @Column(name="lastName")
     public String lastName;
+    @Column(name="address")
     public String address;
+    @Column(name="state")
     public String state;
+    @Column(name="city")
     public String city;
+    @Column(name="zip")
     public String zip;
+    @Column(name="phone")
     public String phone;
 
-    public Contact(int contactId, ContactDTO contactDTO) {
+    public Contact(int contactId,String firstName,String lastName,String address,String state,String city,String zip,String phone) {
         this.contactId = contactId;
-        this.firstName = contactDTO.firstName;
-        this.lastName = contactDTO.lastName;
-        this.address = contactDTO.address;
-        this.state = contactDTO.state;
-        this.city = contactDTO.city;
-        this.zip = contactDTO.zip;
-        this.phone = contactDTO.phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.state = state;
+        this.city = city;
+        this.zip = zip;
+        this.phone = phone;
+    }
+
+    public Contact(int contactId, ContactDTO contactDTO) {
+
+    }
+    public Contact() {
+
     }
 
     public int getContactId() {

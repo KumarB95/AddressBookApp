@@ -9,7 +9,15 @@ public class ContactDTO {
     public String city;
     public String zip;
     public String phone;
+    public int contactId;
 
+    public int getContactId() {
+        return contactId;
+    }
+
+    public void setContactId(int contactId) {
+        this.contactId = contactId;
+    }
     public ContactDTO(String firstName, String lastName, String address, String state, String city, String zip,
                       String phone) {
 
